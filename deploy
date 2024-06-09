@@ -1,3 +1,12 @@
 #!/bin/bash
+set -x
+
+# The local deployment is to 'start-sol'
 
 cp start-sol ~/.local/bin/.
+
+# The github deployment is to 'sol
+
+wget -O ~/.local/bin/sol https://raw.githubusercontent.com/joedefen/sol-docker/main/start-sol
+chmod +x ~/.local/bin/sol
+

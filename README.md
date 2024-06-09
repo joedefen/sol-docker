@@ -42,7 +42,7 @@ NOTES:
 * This docker version:
     * only has the "Bonded" card set, which is the most practical set.
     * uses the standard places under `~/.config/` to store your perferences and stats.
-    * requires running under X11 (i.e., not Wayland)
+    * requires running under X11 or with X11 compatibility in Wayland.
 * The `deploy` script just copies `start-sol` to your `~/.local/bin/`.
 
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # docker build -t aisleriot:18.04 .
 xhost +local:*
-mkdir -p ~/.config/gnome-games/aisleriot
+mkdir -p ~/.config/gnome-games
 docker pull joedefen/aisleriot:18.04
 docker run -d --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ~/.config/gnome-games/:/root/.config/gnome-games/ \
