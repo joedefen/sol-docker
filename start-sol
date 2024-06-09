@@ -1,9 +1,12 @@
 #!/bin/bash
-# docker build -t aisleriot:18.04 .
+IMAGE="joedefen/aisleriot:18.04"
+
 xhost +local:*
 mkdir -p ~/.config/gnome-games
-docker pull joedefen/aisleriot:18.04
+# Check if the image exists locally
+if ! docker image inspect "$IMAGE" > /dev/null 2>&1; then
+    docker pull "$IMAGE"
+fi
 docker run -d --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ~/.config/gnome-games/:/root/.config/gnome-games/ \
-     joedefen/aisleriot:18.04 >/dev/null 2>&1
-# xhost -local:*
+     "$IMAGE" >/dev/null 2>&1
